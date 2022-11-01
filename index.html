@@ -4,21 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>L|e|t|t|e|r Counter</title>
+
     <link rel="stylesheet" href="./style.css"/>
-    <title>Letter Counter</title>
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head>
 <body>
     <div class="container center">
         <div class="corpo center">
-            <form action="" method="post">
-                <div class="mb-3">
-                  <label for="" class="form-label">Text</label>
-                  <input type="text"
-                    class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
+            <input class="" type="text" id="string" placeholder="String"/>
+            <input class="" type="text" id="letter" placeholder="Letra"/>
+            <button id="submit">Click</button>
+        </div>
 
-                </div>
-            </form>
+        <div class="center">
+            <label id="len_result"></label>
+            <label id="letter_count"></label>
         </div>
     </div>
+    <py-script>
+    from js import document
+    from pyodide import *
+
+    submit = document.getElementById('submit')
+
+    def count():
+        string = Element("string").element.value
+        
+        console.log(string)
+
+    cc = create_proxy(count)
+
+    submit.addEventListener("click",cc)
+    </py-script>
+    
 </body>
 </html>
