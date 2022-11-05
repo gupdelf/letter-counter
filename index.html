@@ -8,14 +8,15 @@
     <title>L|e|t|t|e|r Counter</title>
 
     <link rel="stylesheet" href="./style.css"/>
-    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <script src="./counter.js"></script>
+
 </head>
 <body>
     <div class="container center">
         <div class="corpo center">
             <input class="" type="text" id="string" placeholder="String"/>
             <input class="" type="text" id="letter" placeholder="Letra"/>
-            <button id="submit">Click</button>
+            <button onclick="document.getElementById('len_result')count()">Click</button>
         </div>
 
         <div class="center">
@@ -23,21 +24,5 @@
             <label id="letter_count"></label>
         </div>
     </div>
-    <py-script>
-    from js import document
-    from pyodide import *
-
-    submit = document.getElementById('submit')
-
-    def count():
-        string = Element("string").element.value
-        
-        console.log(string)
-
-    cc = create_proxy(count)
-
-    submit.addEventListener("click",cc)
-    </py-script>
-    
 </body>
 </html>
